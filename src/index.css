@@ -1,0 +1,175 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;300;400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: steelblue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+header {
+    background-color: #fff;
+    text-align: center;
+    margin: 50px 0;
+    align-items: center;
+}
+
+.flex-container {
+    max-width: 600px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2%;
+}
+
+.flex-container>h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: tomato;
+    width: 70%;
+}
+
+.flex-container>p {
+    font-size: 1.2rem;
+    width: 70%;
+    color: slateblue;
+    margin: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 70%;
+}
+
+.button-container>button {
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    background-color: steelblue;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0px;
+    border-radius: 3%;
+}
+
+.button-container>select {
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0px;
+    border-radius: 3%;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    /* Take full width of the container */
+    font-size: 16px;
+    font-weight: bold;
+    color: slateblue;
+    gap: 50px;
+}
+
+.grid-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+    display: grid;
+    gap: 20px;
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-rows: repeat(4, 1fr); */
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+}
+
+.item {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: steelblue;
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 4%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: lightgreen;
+    /* Change color on hover */
+}
+
+.card.flipped {
+    background-color: lightblue;
+}
+
+.card.matched {
+    background-color: lightgreen;
+    cursor: default;
+}
+
+
+/* for instruction container */
+
+.instructions-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+}
+
+.instructions-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-align: center;
+}
+
+.instructions-container ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.instructions-container li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+#game-over-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    /* Highlight the message */
+    margin-top: 10px;
+    /* Add some spacing above */
+    text-align: center;
+}
