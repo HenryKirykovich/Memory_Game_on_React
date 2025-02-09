@@ -17,28 +17,29 @@ const winnerSound = new Audio(winnerSoundFile);
 
 
 const generateCardValues = (size) => {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // use string instead array more efficiency . using like array  "ABD[2]"
   const numPairs = (size * size) / 2;
-  let values = Array.from({ length: numPairs }, (_, i) => alphabet[i]);
+  let values = Array.from({ length: numPairs }, (_, i) => alphabet[i]);   // Creates an array of numPairs length using Array.from(). The second parameter is a mapping function that assigns each index i a letter from alphabet.
   values = [...values, ...values].sort(() => Math.random() - 0.5);
-  return values.map((value) => ({ value, isFlipped: false, isMatched: false }));
+  return values.map((value) => ({ value, isFlipped: false, isMatched: false })); // Each card has { value, isFlipped, isMatched }.
 };
 
 const App = () => {
-  const [gridSize, setGridSize] = useState(4);
+  const [gridSize, setGridSize] = useState(4);  // Stores the grid size (default 4 means a 4x4 game).
   const [cards, setCards] = useState(generateCardValues(4));
-  const [flippedCards, setFlippedCards] = useState([]);
-  const [moves, setMoves] = useState(0);
-  const [timeElapsed, setTimeElapsed] = useState(0);
-  const [timer, setTimer] = useState(null);
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [flippedCards, setFlippedCards] = useState([]); //Tracks which two cards are flipped.
+  const [moves, setMoves] = useState(0); // counter
+  const [timeElapsed, setTimeElapsed] = useState(0); // timer
+  const [timer, setTimer] = useState(null);  // Tracks how many seconds the game has been running.
+  const [isGameOver, setIsGameOver] = useState(false);  // true when all pairs are matched.Used to stop the game and show the final score.
 
   useEffect(() => {
-    if (flippedCards.length === 2) {
-      setTimeout(checkMatch, 1000);
+    if (flippedCards.length === 2) {    // If two cards are flipped, waits 1 second (1000ms) and calls checkMatch().
+      setTimeout(checkMatch, 1000); // 1 second
     }
-  }, [flippedCards]);
+  }, [flippedCards]); 
 
+// starting game and restarting old adjustments
   const startNewGame = () => {
     setCards(generateCardValues(gridSize));
     setMoves(0);
@@ -49,9 +50,11 @@ const App = () => {
     setTimer(setInterval(() => setTimeElapsed((prev) => prev + 1), 1000));
   };
 
-  const checkMatch = () => {
-    const [first, second] = flippedCards;
 
+  // checks if the two flipped cards match  
+  const checkMatch = () => {
+    const [first, second] = flippedCards;   // flippedCards stores the indexes of the two flipped cards.
+   //  array destructuring, a JavaScript feature that allows extracting values from an array into separate variables
     if (cards[first].value === cards[second].value) {
       setCards((prevCards) =>
         prevCards.map((card, index) =>
