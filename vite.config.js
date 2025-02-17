@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
+  plugins: [react()],
+  base: '/Memory_Game_on_React/', //Set base path to match  repository name
+});
 
-    plugins: [react()],
-    base: 'Memory_Game_on_React/',
-})
+
