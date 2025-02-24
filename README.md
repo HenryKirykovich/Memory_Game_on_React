@@ -1,5 +1,6 @@
 # React + Vite
 
+# for starting play game go to https://henrykirykovich.github.io/Memory_Game_on_React/
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
