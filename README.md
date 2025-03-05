@@ -1,9 +1,17 @@
-# React + Vite
+A simple memory game built with React, where players memorize cards and match pairs using their memory. This project helps practice state management, event handling, and local/session storage in React.
 
-# for starting play game go to https://henrykirykovich.github.io/Memory_Game_on_React/
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Game Features
+- Flip cards and find matching pairs
+- Track progress with local/session storage
+-  React-based state management
+-   Dynamic UI updates using React Hooks
 
-Currently, two official plugins are available:
+How to Play
+- Flip two cards at a time.
+- Match the pairs using memory.
+- Win when all pairs are matched!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used 
+-React.js (Functional Components & Hooks)
+- CSS for styling
+- -Local & Session Storage for game state persistence
