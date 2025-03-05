@@ -14,4 +14,7 @@ How to Play
 Technologies Used 
 -React.js (Functional Components & Hooks)
 - CSS for styling
-- -Local & Session Storage for game state persistence
+- Local & Session Storage for game state persistence
+
+
+use link for gaming online    https://henrykirykovich.github.io/Memory_Game_on_React/
